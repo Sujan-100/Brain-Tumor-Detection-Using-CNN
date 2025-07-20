@@ -1,0 +1,8 @@
+ import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("rm1000/brain-tumor-mri-scans")
+
+print("Path to dataset files:", path)
+
+Link: https://www.kaggle.com/api/v1/datasets/download/rm1000/brain-tumor-mri-scans?dataset_version_number=1
