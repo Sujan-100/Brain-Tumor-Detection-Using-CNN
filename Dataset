@@ -1,4 +1,49 @@
- import kagglehub
+🧠 Dataset Description: Brain Tumor MRI Images
+🔗 Source
+The dataset is publicly available on Kaggle, under the title: Brain Tumor Classification (MRI)
+Link: https://www.kaggle.com/api/v1/datasets/download/rm1000/brain-tumor-mri-scans?dataset_version_number=1
+
+📦 Contents of the Dataset
+The dataset consists of MRI scan images of the human brain, classified into four categories:
+Glioma Tumor
+Meningioma Tumor
+Pituitary Tumor
+No Tumor
+Each category is stored in its respective folder. The images are labeled accordingly, making it a supervised multi-class classification dataset.
+
+🖼️ Image Characteristics
+Format: JPG or PNG
+Color Space: Mostly grayscale (single channel), though some might be in RGB
+Size: Varies across images (e.g., 512x512, 240x240), so resizing is required for model input
+Modality: MRI (Magnetic Resonance Imaging)
+
+📊 Class Distribution
+The dataset includes a balanced number of images across each class (in some versions, the dataset may be slightly imbalanced).
+Example class counts (may vary based on dataset version):
+Tumor Type	Number of Images
+Glioma Tumor	826
+Meningioma Tumor	822
+Pituitary Tumor	827
+No Tumor	395
+
+(Note: Actual numbers should be verified based on your downloaded dataset.)
+
+⚙️ Why this Dataset is Useful
+Medical relevance: It mimics real-world MRI scan classification.
+Labeled data: Each image is clearly labeled, enabling supervised learning.
+Real patient data: MRI scans are taken from real patients (anonymized), making it suitable for clinical AI research.
+
+🧹 Preprocessing Required
+To make the dataset usable for CNN models, several preprocessing steps are applied:
+Resizing all images to a standard size (e.g., 128×128 pixels).
+Grayscale conversion (if images are not already in grayscale).
+Normalization of pixel values to the range [0, 1].
+One-hot encoding of categorical labels for classification.
+Train-test split for model training and evaluation.
+
+CODE:
+
+import kagglehub
 
 # Download latest version
 path = kagglehub.dataset_download("rm1000/brain-tumor-mri-scans")
